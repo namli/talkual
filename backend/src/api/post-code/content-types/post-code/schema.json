@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_codes",
+  "info": {
+    "singularName": "post-code",
+    "pluralName": "post-codes",
+    "displayName": "PostCode"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "post_codes"
+    }
+  }
+}
